@@ -1,0 +1,81 @@
+.story {
+      width: 75%;
+      margin: 7rem auto;
+      box-shadow: 0 3rem 6rem rgba($color-black, 0.2);
+      background-color: $color-white;
+      border-radius: 3px;
+      padding: 6rem;
+      padding-left: 9rem;
+      font-size: $default-font-size;
+      transform: skewX(-10deg);
+
+      &>* {
+            transform: skewX(10deg);
+
+            @include respond(phone) {
+                  transform: skewX(0);
+            }
+      }
+
+      &__shape {
+            width: 15rem;
+            height: 15rem;
+            float: left;
+            //Before applying this property make sure to float it and specify the height and width
+            -webkit-shape-outside: circle(50% at 50% 50%);
+            shape-outside: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+            transform: translateX(-2.5rem) skewX(10deg);
+            position: relative;
+
+            @include respond(phone) {
+                  transform: translate(-2.5rem) skewX(0);
+            }
+      }
+
+      &__image {
+            width: 151%;
+            transform: scale(1.4) translateX(-2rem);
+            transition: all 0.4s;
+      }
+
+      &__caption {
+            @include pos-center;
+            color: $color-white;
+            text-transform: uppercase;
+            font-size: $default-font-size;
+            text-align: center;
+            opacity: 0;
+            transition: all 0.4s;
+            backface-visibility: hidden;
+      }
+
+      &:hover &__caption {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+
+      }
+
+      &:hover &__image {
+            transform: scale(1) tanslateX(-2rem);
+            filter: blur(3px) brightness(75%);
+      }
+
+      &:not(:first-child) {
+            z-index: 2;
+      }
+
+      @include respond(tab-port) {
+            width: 100%;
+            padding: 4rem;
+            padding-left: 7rem;
+      }
+
+      @include respond(phone) {
+            transform: skewX(0);
+      }
+}
+
+.image3 {
+      transform: scale(0.7) translate(-5rem, -15rem);
+}
