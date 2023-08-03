@@ -1,0 +1,17 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass starter/Sass/main.scss starter/css/style.css -w"
+  },
+  "author": "Adnan Khan",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.64.1"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}
